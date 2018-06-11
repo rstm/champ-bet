@@ -191,12 +191,30 @@ if($result)
 {
     $rows = mysqli_num_rows($result); // количество полученных строк
      
-    echo "<table class='redTable'><tr><th>Id</th><th>Никнейм</th><th>Пароль</th></tr>";
-    for ($i = 0 ; $i < $rows ; ++$i)
+    echo "<table class='redTable'><tr><th>Никнейм</th><th>Рейтинг</th></tr>";
+    while($user = mysqli_fetch_object($result))
     {
-        $row = mysqli_fetch_row($result);
+		$rating = 0;
+		$query_rate ="SELECT * FROM `rates` where user_id = $user->user_id";
+		$result_rate = mysqli_query($dbc, $query_rate) or die("Ошибка " . mysqli_error($dbc)); 
+	    while($rate = mysqli_fetch_object($result_rate)) {
+			$query_m ="SELECT * FROM `matches` where id = $rate->match_id and score1 is not null and score2 is not null";
+			$result_m = mysqli_query($dbc, $query_m) or die("Ошибка " . mysqli_error($dbc)); 
+			if($match = mysqli_fetch_object($result_m)) {
+        		if ($match->score1 == $rate->rate1 && 
+        			$match->score2 == $rate->rate2) {
+        				$rating = $rating + 3;
+        		}
+
+			}
+	    }
+
+
         echo "<tr>";
-            for ($j = 0 ; $j < 3 ; ++$j) echo "<td>$row[$j]</td>";
+        
+        echo "<td>$user->username</td>";
+        echo "<td>$rating</td>";
+        
         echo "</tr>";
     }
     echo "</table>";
