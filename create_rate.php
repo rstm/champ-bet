@@ -6,8 +6,13 @@ if(isset($_POST['match_id'])){
 	$match_id = mysqli_real_escape_string($dbc, trim($_POST['match_id']));
 	$rate1 = mysqli_real_escape_string($dbc, trim($_POST['rate1']));
 	$rate2 = mysqli_real_escape_string($dbc, trim($_POST['rate2']));
-
-	if(!empty($match_id) && !empty($rate1) && !empty($rate2) && $rate1 > -1 && $rate2 > -1) {
+	echo $match_id;
+	echo "<br>";
+	echo $rate1;
+	echo "<br>";
+	echo $rate2;
+	echo "<br>";
+	if(!empty($match_id) && $rate1 != null && $rate2 != null && $rate1 > -1 && $rate2 > -1) {
 		$query = "SELECT * FROM `rates` WHERE match_id = $match_id and user_id = $user_id";
 		$data = mysqli_query($dbc, $query);
 		if(mysqli_num_rows($data) == 0) {

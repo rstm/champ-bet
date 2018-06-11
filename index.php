@@ -202,13 +202,33 @@ if($result)
 			$result_m = mysqli_query($dbc, $query_m) or die("Ошибка " . mysqli_error($dbc)); 
 			if($match = mysqli_fetch_object($result_m)) {
         		if ($match->score1 == $rate->rate1 && 
-        			$match->score2 == $rate->rate2) {
+        			$match->score2 == $rate->rate2) 
+        		{
         				$rating = $rating + 3;
+        		} 
+        		else
+        		{
+	        		if ($match->score1 - $match->score2 ==  $rate->rate1 - $rate->rate2)
+	        		{
+	        				$rating = $rating + 2;
+	        		} 
+	        		else
+	        		{
+	                    if (
+	                    	($match->score1 - $match->score2) > 0 &&
+	        			   ($rate->rate1 - $rate->rate2) > 0
+	        			 or
+	        			   ($match->score1 - $match->score2) < 0 &&
+	        			   ($rate->rate1 - $rate->rate2) < 0)
+	        			{
+	        				$rating = $rating + 1;
+        				}
+	        		}
         		}
+
 
 			}
 	    }
-
 
         echo "<tr>";
         
@@ -307,14 +327,6 @@ if (isset($_COOKIE['user_id']))
 </div>
         	
      </div>
-
-
-
-
-
-
-
-
 
 
 
