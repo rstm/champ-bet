@@ -250,8 +250,15 @@ if (isset($_COOKIE['user_id']))
 		        echo "<td>$match->score1 - $match->score2</td>";
 		        echo "<td>$match->datetime</td>";
 		        echo "<td>$rate->rate1 - $rate->rate2</td>";
-		        ?>
 
+		        // echo(date("Y-m-d H:i",time()));
+		        // echo "<br>";
+		        // echo(date("Y-m-d H:i",strtotime($match->datetime)));
+		        // echo "<br>";
+
+		        if (time() < strtotime($match->datetime)) {
+		        ?>
+				
 				<td>
 		          	<form method="POST" action="/signup.ru/create_rate.php">
 						<input type="hidden" name="match_id" value="<?=$match->id?>">
@@ -261,6 +268,7 @@ if (isset($_COOKIE['user_id']))
 			  	</td>
 
 		        <?php
+	    		} else echo "<td>Ставок больше нет</td>";
 				echo "</tr>";
 		    }
 		    echo "</table>";
