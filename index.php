@@ -223,7 +223,7 @@ if (isset($_COOKIE['user_id']))
 
 			<?php
 		$user_id = $_COOKIE['user_id'];
-		$query ="SELECT * FROM `rates` where user_id = $user_id";
+		$query ="SELECT * FROM `matches`";
 		 
 		$result = mysqli_query($dbc, $query) or die("Ошибка " . mysqli_error($dbc)); 
 		if($result)
@@ -233,17 +233,14 @@ if (isset($_COOKIE['user_id']))
 		    echo "<table class='redTable'><tr><th>Матч №</th><th>Информация о матче</th><th>Счёт</th><th>Дата и время</th><th>Ваша ставка:</th></tr>";
 		    for ($i = 0 ; $i < $rows ; ++$i)
 		    {
-		    	$rate = mysqli_fetch_object($result);
+		    	$match = mysqli_fetch_object($result);
 
-				$query_match ="SELECT * FROM `matches` where id = $rate->match_id";
-				$result_match = mysqli_query($dbc, $query_match) or die("Ошибка " . mysqli_error($dbc)); 
+				$query_rate ="SELECT * FROM `rates` where match_id = $match->id and user_id = $user_id";
+				$result_rate = mysqli_query($dbc, $query_rate) or die("Ошибка " . mysqli_error($dbc)); 
+			    $rate = mysqli_fetch_object($result_rate); // количество полученных строк
 
-			    $match = mysqli_fetch_object($result_match); // количество полученных строк
-
-
-		    	// $rate = mysqli_fetch_row($result);
 				echo "<tr>";
-		        echo "<td>$rate->id</td>";
+		        echo "<td>$match->id</td>";
 		        echo "<td>$match->command1 - $match->command2</td>";
 		        echo "<td>$match->score1 - $match->score2</td>";
 		        echo "<td>$match->datetime</td>";
