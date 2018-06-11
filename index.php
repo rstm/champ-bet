@@ -213,34 +213,55 @@ if($result)
 		<div class="col-md-2">
 		</div>
 		<div class="col-md-5">
-	<div class="position">
+	
 <?php
 
- 
-$query ="SELECT * FROM `matches`";
- 
-$result = mysqli_query($dbc, $query) or die("Ошибка " . mysqli_error($dbc)); 
-if($result)
+if (isset($_COOKIE['user_id'])) 
 {
-    $rows = mysqli_num_rows($result); // количество полученных строк
-     
-    echo "<table class='redTable'><tr><th>Матч №</th><th>Информация о матче</th><th>Счёт</th><th>Дата и время</th><th>Ваша ставка:</th></tr>";
-    for ($i = 0 ; $i < $rows ; ++$i)
-    {
-        $row = mysqli_fetch_row($result);
-        echo "<tr>";
-            for ($j = 0 ; $j < 5 ; ++$j) echo "<td>$row[$j]</td>";
-        echo "</tr>";
-    }
-    echo "</table>";
-     
-    // очищаем результат
-    mysqli_free_result($result);
-}
- 
-mysqli_close($dbc);
-?>
-</div>
+	?>
+		<div class="position">
+
+			<?php
+		$user_id = $_COOKIE['user_id'];
+		$query ="SELECT * FROM `rates` where user_id = $user_id";
+		 
+		$result = mysqli_query($dbc, $query) or die("Ошибка " . mysqli_error($dbc)); 
+		if($result)
+		{
+		    $rows = mysqli_num_rows($result); // количество полученных строк
+		     
+		    echo "<table class='redTable'><tr><th>Матч №</th><th>Информация о матче</th><th>Счёт</th><th>Дата и время</th><th>Ваша ставка:</th></tr>";
+		    for ($i = 0 ; $i < $rows ; ++$i)
+		    {
+		    	$rate = mysqli_fetch_object($result);
+
+				$query_match ="SELECT * FROM `matches` where id = $rate->match_id";
+				$result_match = mysqli_query($dbc, $query_match) or die("Ошибка " . mysqli_error($dbc)); 
+
+			    $match = mysqli_fetch_object($result_match); // количество полученных строк
+
+
+		    	// $rate = mysqli_fetch_row($result);
+				echo "<tr>";
+		        echo "<td>$rate->id</td>";
+		        echo "<td>$match->command1 - $match->command2</td>";
+		        echo "<td>$match->score1 - $match->score2</td>";
+		        echo "<td>$match->datetime</td>";
+		        echo "<td>$rate->rate1 - $rate->rate2</td>";
+				echo "</tr>";
+		    }
+		    echo "</table>";
+		     
+		    // очищаем результат
+		    mysqli_free_result($result);
+		}
+		 
+		mysqli_close($dbc);
+		?>
+		</div>
+<?php } else { ?>
+	<h2>Авторизуйся</h2>
+<?php } ?>
 			
 		</div>
 	</div>
