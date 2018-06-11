@@ -264,7 +264,7 @@ if (isset($_COOKIE['user_id']))
 
 				echo "<tr>";
 		        echo "<td>$match->id</td>";
-		        echo "<td>$match->command1 - $match->command2</td>";
+		        echo "<td><img src=\"/signup.ru/img/icons/$match->command1.png\"> $match->command1 - $match->command2<img src=\"/signup.ru/img/icons/$match->command2.png\"> </td>";
 		        echo "<td>$match->score1 - $match->score2</td>";
 		        echo "<td>$match->datetime</td>";
 		        echo "<td>$rate->rate1 - $rate->rate2</td>";
