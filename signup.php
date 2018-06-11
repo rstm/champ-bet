@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
 		$query = "SELECT * FROM `signup` WHERE username = '$username'";
 		$data = mysqli_query($dbc, $query);
 		if(mysqli_num_rows($data) == 0) {
-			$query ="INSERT INTO `signup` (username, password) VALUES ('$username', SHA('$password2'))";
+			$query ="INSERT INTO `signup` (username, password) VALUES ('$username', '$password2')";
 			mysqli_query($dbc,$query);
 			echo 'Всё готово, можете авторизоваться';
 			mysqli_close($dbc);
