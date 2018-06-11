@@ -128,7 +128,7 @@ if(!isset($_COOKIE['user_id'])) {
 								}
 								else {0
 									?>
-									<p><a href="myprofile.php">Мой профиль: <?php echo $_COOKIE['username']; ?></a></p><p><a href="exit.php">Выйти</a></p>
+									<p><a href="exit.php">Выйти (<?php echo $_COOKIE['username']; ?>)</a></p>
 								<?php	
 								}
 								?>
@@ -230,7 +230,7 @@ if (isset($_COOKIE['user_id']))
 		{
 		    $rows = mysqli_num_rows($result); // количество полученных строк
 		     
-		    echo "<table class='redTable'><tr><th>Матч №</th><th>Информация о матче</th><th>Счёт</th><th>Дата и время</th><th>Ваша ставка:</th></tr>";
+		    echo "<table class='redTable'><tr><th>Матч №</th><th>Информация о матче</th><th>Счёт</th><th>Дата и время</th><th>Ваша ставка:</th><th></th></tr>";
 		    for ($i = 0 ; $i < $rows ; ++$i)
 		    {
 		    	$match = mysqli_fetch_object($result);
@@ -238,6 +238,11 @@ if (isset($_COOKIE['user_id']))
 				$query_rate ="SELECT * FROM `rates` where match_id = $match->id and user_id = $user_id";
 				$result_rate = mysqli_query($dbc, $query_rate) or die("Ошибка " . mysqli_error($dbc)); 
 			    $rate = mysqli_fetch_object($result_rate); // количество полученных строк
+			    if ($rate == null) {
+			    	$rate = new class{ };
+			    	$rate->rate1 = null;
+			    	$rate->rate2 = null;
+			    }
 
 				echo "<tr>";
 		        echo "<td>$match->id</td>";
@@ -245,6 +250,17 @@ if (isset($_COOKIE['user_id']))
 		        echo "<td>$match->score1 - $match->score2</td>";
 		        echo "<td>$match->datetime</td>";
 		        echo "<td>$rate->rate1 - $rate->rate2</td>";
+		        ?>
+
+				<td>
+		          	<form method="POST" action="/signup.ru/create_rate.php">
+						<input type="hidden" name="match_id" value="<?=$match->id?>">
+						<input class="rate-input" type="number" name="rate1" >-<input class="rate-input" type="number" name="rate2" >
+					    <button type="submit" name="submit">Сделать ставку</button>
+			  		</form>
+			  	</td>
+
+		        <?php
 				echo "</tr>";
 		    }
 		    echo "</table>";
