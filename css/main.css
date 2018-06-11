@@ -1,0 +1,197 @@
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	
+}
+body input:required:valid,
+body textarea:required:valid {
+	
+}
+
+.error {font-family: "RobotoRegular", sans-serif;
+font-size: 16px;
+text-align: center;
+color: #fff;
+	background :#524e45;}
+
+body {
+  background-image: url(../img/bg_thirdline.jpg);
+               background-repeat: repeat;
+               background-size: cover;
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	
+}
+.hidden {
+	display: none;
+}
+.carousel img {
+	width: 100%;
+	height: auto;
+}
+.parallax {
+	background-attachment: fixed;
+	background-position: 50% 0;
+	position: relative;
+}
+
+header {
+	    
+	    min-height: 100px;
+	  
+	    position: relative;
+	    font-family: 'BebasRegular';
+}
+
+header a {color: #0196d8;}
+
+.top_line {min-height: 100px; 
+		  top: 0;
+		  width: 100%;
+		  background-image: url(../img/bg_firstline.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+		  padding-bottom: 10px; padding-top: 20px;}
+
+.top_line a {font-size: 22px; 
+            border-bottom: transparent solid 1px;
+            transition: all .25s;}
+
+.top_line a:hover {border-bottom: #0196d8 1px solid;}
+
+.top {padding-left: 60px;
+             background-image: url(../img/icon3.png);
+             background-repeat: no-repeat;
+             background-position: top left;
+             background-size: contain;
+             line-height: 35px;}
+
+.top strong {display: block; 
+	                color: #d12f22;
+	                text-transform: uppercase;
+	                font-weight: bold;
+	                font-size: 41px;
+	                }
+
+.top_line .logo {border-bottom: none;
+                 position: absolute;
+                 margin-top: -18px;
+                 }
+.top_line .logo:hover {border-bottom: none;}
+
+.logo_wrap {position: relative; width: 240px; margin: 0 auto;}
+
+.second_line {min-height: 100px; position:; top: 0; background-image: url(../img/bg_secondline.jpg);
+               background-repeat: repeat; color: #eae5d2; font-family: '7738'; font-size: 25px; padding-top: 10px; text-align: center;
+               padding-bottom: 10px; padding-top: 10px;}
+
+.third_line { background-image: url(../img/bg_thirdline.jpg);
+               background-repeat: repeat-x;
+               background-size: 100%;
+                background-position: top center; 
+               min-height: 516px;}
+
+.match {font-family: "RobotoLight";
+        font-size: 12px;
+        color: #e9e4d1;
+        text-align:center;
+        }
+
+.countries {text-align: left; font-size: 30px;}
+.countries img {margin-right: 5px;}
+
+
+div.field {
+  padding-bottom: -30px;
+}
+div.field label {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 10px;
+}
+
+.float_left {float: left;}
+.float_right {float: right;}
+
+table.redTable {
+  font-family: "Lucida Console", Monaco, monospace;
+  border: 5px solid #20368c;
+  background-color: #EEE7DB;
+  width: 30%;
+  height: 30%;
+  text-align: center;
+  border-collapse: collapse;
+
+}
+table.redTable td, table.redTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.redTable tbody td {
+  font-size: 13px;
+  color: #333333;
+}
+table.redTable tr:nth-child(even) {
+  background: #F5C8BF;
+}
+table.redTable td:nth-child(even) {
+  background: #D0E4F5;
+}
+table.redTable thead {
+  background: #20368c;
+}
+table.redTable thead th {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #20368c;
+}
+table.redTable thead th:first-child {
+  border-left: none;
+}
+
+table.redTable tfoot {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #20368c;
+}
+table.redTable tfoot td {
+  font-size: 13px;
+}
+table.redTable tfoot .links {
+  text-align: right;
+}
+table.redTable tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #20368c;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.position {display:block; margin: 100px auto;}
+
+.content {
+ padding-top: 50px;
+  }
