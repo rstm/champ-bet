@@ -190,8 +190,12 @@ $result = mysqli_query($dbc, $query) or die("Ошибка " . mysqli_error($dbc)
 if($result)
 {
     $rows = mysqli_num_rows($result); // количество полученных строк
+
+    $usernames = array();
+    $ratings = array();
+    $check_ratings = array();
      
-    echo "<table class='redTable'><tr><th>Никнейм</th><th>Рейтинг</th></tr>";
+    $i = 0;
     while($user = mysqli_fetch_object($result))
     {
 		$rating = 0;
@@ -225,18 +229,44 @@ if($result)
         				}
 	        		}
         		}
-
-
 			}
 	    }
+		$usernames[$i] = $user->username;
+		$ratings[$i] = $rating;
+		$check_ratings[$i] = $rating;
+		$i++;
+    }
 
-        echo "<tr>";
+
+    $sorted_ratings = array();
+
+    for ($i=0; $i < sizeof($ratings); $i++) { 
+	    $max = -1;
+	    $max_index = $i;
+		for ($j=0; $j < sizeof($check_ratings); $j++) { 
+			if ($check_ratings[$j] != -1 && $check_ratings[$j] > $max) {
+				$max = $check_ratings[$j];
+				$max_index = $j;
+			}
+		}
+		$check_ratings[$max_index] = -1;
+		$sorted_ratings[$i] = $max_index;
+    }
+
+    echo "<table class='redTable'><tr><th>Место</th><th>Никнейм</th><th>Рейтинг</th></tr>";
+    for ($i=0; $i < sizeof($sorted_ratings); $i++) { 
+    	$k = $sorted_ratings[$i];
+    	$number = $i + 1;
+    	echo "<tr>";
         
-        echo "<td>$user->username</td>";
-        echo "<td>$rating</td>";
+        echo "<td>$number</td>";
+        echo "<td>$usernames[$k]</td>";
+        echo "<td>$ratings[$k]</td>";
         
         echo "</tr>";
     }
+
+
     echo "</table>";
      
     // очищаем результат
