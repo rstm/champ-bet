@@ -362,7 +362,7 @@ if (isset($_COOKIE['user_id']))
 				$result_rate = mysqli_query($dbc, $query_rate) or die("Ошибка " . mysqli_error($dbc)); 
 			    $rate = mysqli_fetch_object($result_rate); // количество полученных строк
 			    if ($rate == null) {
-			    	$rate = new stdClass{ };
+			    	$rate = new stdClass();
 			    	$rate->rate1 = null;
 			    	$rate->rate2 = null;
 			    	
