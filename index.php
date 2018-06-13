@@ -92,7 +92,8 @@ if(!isset($_COOKIE['user_id'])) {
 				setcookie('user_id', $row['user_id'], time() + (60*60*24*30));
 				setcookie('username', $row['username'], time() + (60*60*24*30));
 				// $home_url = 'http://' . $_SERVER['HTTP_HOST']  . '/signup.ru/index.php';
- 				// header('Location: ' . $home_url);
+				$home_url = $_SERVER['PHP_SELF'];
+ 				header('Location: ' . $home_url);
 			}
 			else {
 				echo 'Error_1552 - Неправильный логин/пароль';
