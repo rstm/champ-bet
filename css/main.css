@@ -31,9 +31,7 @@ color: #fff;
 	background :#524e45;}
 
 body {
-  background-image: url(../img/bg_thirdline.jpg);
-               background-repeat: repeat;
-               background-size: cover;
+  background:#f1ece3;
 	font-family: "RobotoRegular", sans-serif;
 	font-size: 16px;
 	min-width: 320px;
@@ -133,29 +131,24 @@ div.field label {
 .float_right {float: right;}
 
 table.redTable {
-  font-family: "Lucida Console", Monaco, monospace;
-  border: 5px solid #20368c;
-  background-color: #EEE7DB;
-  width: 30%;
+  font-family: 'WhitneyBold';
+   font-family: 'WhitneyMedium';
+  background-color: #f1ece3;
+  width: 100%;
   height: 30%;
   text-align: center;
   border-collapse: collapse;
 
 }
 table.redTable td, table.redTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
+  border-bottom: 2px hidden #b8a95c;
+  padding: 20px 2px;
 }
 table.redTable tbody td {
   font-size: 13px;
   color: #333333;
 }
-table.redTable tr:nth-child(even) {
-  background: #F5C8BF;
-}
-table.redTable td:nth-child(even) {
-  background: #D0E4F5;
-}
+
 table.redTable thead {
   background: #20368c;
 }
@@ -200,3 +193,23 @@ table.redTable tfoot .links a{
 .rate-input {
   width: 30px;
 }
+
+h2 {
+    
+    color: #ece7d3;
+    font-size:28px; 
+   font-family: '7738';}
+
+
+#id {color: #7e7e7e;
+    font-weight: 600;
+    line-height: 18px;
+    font-size: 14px;}
+
+#raspisanie {font-family: 'Dusha_FIFA_World_Cup_2018';
+            font-size: 76px;
+            line-height: 76px;
+            color: #333;
+           font-style: normal;
+          font-weight: 400;
+          text-align: center;}

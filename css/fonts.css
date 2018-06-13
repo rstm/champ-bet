@@ -58,3 +58,15 @@
          url('fonts/7738.ttf') format('truetype'),
          url('fonts/7738.svg#7738') format('svg');
 }
+
+@font-face {
+    font-family: 'WhitneyMedium';
+    src: url('fonts/WhitneyMedium.eot');
+    src: url('fonts/WhitneyMedium.eot') format('embedded-opentype'),
+         url('fonts/WhitneyMedium.woff2') format('woff2'),
+         url('fonts/WhitneyMedium.woff') format('woff'),
+         url('fonts/WhitneyMedium.ttf') format('truetype'),
+         url('fonts/WhitneyMedium.svg#WhitneyMedium') format('svg');
+}
+
+

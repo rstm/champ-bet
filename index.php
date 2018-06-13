@@ -102,7 +102,7 @@ if(!isset($_COOKIE['user_id'])) {
 							</a>
 						</div>
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-3">
 					</div>	
 				
 					<div class="col-md-3">
@@ -134,8 +134,7 @@ if(!isset($_COOKIE['user_id'])) {
 								?>
 								</section>
 			
-					</div>
-					<div class="col-md-1">
+				
 						
 								    </div>
 									
@@ -179,7 +178,9 @@ if(!isset($_COOKIE['user_id'])) {
 	<div class="third_line">
 		<div class="container">
 				<div class="row">
-		<div class="col-md-5">
+					<div class="col-md-4">
+		</div>
+		<div class="col-md-4">
 			<div class="position">
 <?php
 
@@ -278,9 +279,34 @@ if($result)
 			
 		</div>
 	</div>
-		<div class="col-md-2">
+		<div class="col-md-4">
 		</div>
-		<div class="col-md-5">
+		
+	</div>
+</div>
+
+
+        	
+     </div>
+
+     <div class="forthline">
+     	<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+     			<div class="col-md-8">
+     				<div id="raspisanie">Расписание матчей</div>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+		</div>
+	</div>
+     	<div class="container">
+			<div class="row">
+				<div class="col-md-1">
+				</div>
+     			<div class="col-md-10">
 	
 <?php
 
@@ -310,13 +336,17 @@ if (isset($_COOKIE['user_id']))
 			    	$rate = new class{ };
 			    	$rate->rate1 = null;
 			    	$rate->rate2 = null;
+			    	
 			    }
 
+			   
 				echo "<tr>";
-		        echo "<td>$match->id</td>";
-		        echo "<td><img src=\"/signup.ru/img/icons/$match->command1.png\"> $match->command1 - $match->command2<img src=\"/signup.ru/img/icons/$match->command2.png\"> </td>";
+		        echo "<td id='id'>#$match->id<br>$match->datetime</td>";
+		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command1.png\"></br>$match->command1</div></td>";
+		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command2.png\"></br>$match->command2</div></td>";
+
+
 		        echo "<td>$match->score1 - $match->score2</td>";
-		        echo "<td>$match->datetime</td>";
 		        echo "<td>$rate->rate1 - $rate->rate2</td>";
 
 		        // echo(date("Y-m-d H:i",time()));
@@ -349,14 +379,17 @@ if (isset($_COOKIE['user_id']))
 		?>
 		</div>
 <?php } else { ?>
-	<h2>Авторизуйся</h2>
+	<div class="position"><h2>Необходимо авторизоваться!</h2></div>
 <?php } ?>
 			
 		</div>
-	</div>
-</div>
-        	
+		<div class="col-md-1">
+		</div>
+
      </div>
+
+ </div>
+</div>
 
 
 
