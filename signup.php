@@ -1,5 +1,11 @@
 <?php
-$dbc = mysqli_connect('localhost', 'root', '', 'lesson') OR DIE('Ошибка подключения к базе данных');
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$dbc = mysqli_connect($server, $username, $password, $db) OR DIE('Ошибка подключения к базе данных');
 if(isset($_POST['submit'])){
 	$username = mysqli_real_escape_string($dbc, trim($_POST['username']));
 	$password1 = mysqli_real_escape_string($dbc, trim($_POST['password1']));
@@ -10,7 +16,7 @@ if(isset($_POST['submit'])){
 		if(mysqli_num_rows($data) == 0) {
 			$query ="INSERT INTO `signup` (username, password) VALUES ('$username', '$password2')";
 			mysqli_query($dbc,$query);
-			echo 'Всё готово, можете авторизоваться';
+			echo 'Всё готово, можете <a href="index.php">авторизоваться</a>';
 			mysqli_close($dbc);
 			exit();
 		}

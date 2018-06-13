@@ -10,7 +10,14 @@
 
 <?php
 
-$dbc = mysqli_connect('localhost', 'root', '', 'lesson') OR DIE('Ошибка подключения к базе данных');
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+// $dbc = mysqli_connect('localhost', 'root', '', 'lesson') OR DIE('Ошибка подключения к базе данных');
+$dbc = mysqli_connect($server, $username, $password, $db) OR DIE('Ошибка подключения к базе данных');
 if(isset($_POST['match_id'])){
 	$user_id = $_COOKIE['user_id'];
 	$match_id = mysqli_real_escape_string($dbc, trim($_POST['match_id']));
@@ -27,8 +34,7 @@ if(isset($_POST['match_id'])){
 		 }
 		mysqli_query($dbc,$query);
 		mysqli_close($dbc);
-		$home_url = 'http://' . $_SERVER['HTTP_HOST']  . '/signup.ru/index.php';
-	 	header('Location: ' . $home_url);
+	 	header('Location: index.php');
 	}
 	else {
 		echo "<h2>Ошибка, попробуйте ещё раз! </h2>";
