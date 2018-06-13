@@ -384,7 +384,7 @@ if (isset($_COOKIE['user_id']))
 		        ?>
 				
 				<td>
-		          	<form method="POST" action="/signup.ru/create_rate.php">
+		          	<form method="POST" action="create_rate.php">
 						<input type="hidden" name="match_id" value="<?=$match->id?>">
 						<input class="rate-input inputcss" type="number" name="rate1" >-<input class="rate-input inputcss" type="number" name="rate2" ><br>
 					    <button id="baton" type="submit" name="submit">Сделать ставку</button>
