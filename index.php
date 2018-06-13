@@ -371,6 +371,7 @@ if (isset($_COOKIE['user_id']))
               
 				echo "<tr>";
 
+
 				
 		        echo "<td id='match_number'>#$match->id<br>$match->datetime</td>";
 		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command1.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
