@@ -64,7 +64,22 @@ else document.getElementById("doc_time").innerHTML = date_time;
 <body>
 	<div class="error">
 	<?php
-$dbc = mysqli_connect('localhost', 'root', '', 'lesson');
+
+	$cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server   = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"];
+$cleardb_password = $cleardb_url["pass"];
+$cleardb_db       = substr($cleardb_url["path"],1);
+
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+// $dbc = mysqli_connect('localhost', 'root', '', 'lesson');
+$dbc = mysqli_connect($server, $username, $password, $db);
 if(!isset($_COOKIE['user_id'])) {
 	if(isset($_POST['submit'])) {
 		$user_username = mysqli_real_escape_string($dbc, trim($_POST['username']));
