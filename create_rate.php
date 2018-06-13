@@ -34,7 +34,7 @@ if(isset($_POST['match_id'])){
 		 }
 		mysqli_query($dbc,$query);
 		mysqli_close($dbc);
-	 	header('Location: index.php');
+	 	header("Location: index.php#$match_id");
 	}
 	else {
 		echo "<h2>Ошибка, попробуйте ещё раз! </h2>";
