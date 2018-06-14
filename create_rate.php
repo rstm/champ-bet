@@ -16,8 +16,11 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-// $dbc = mysqli_connect('localhost', 'root', '', 'lesson') OR DIE('Ошибка подключения к базе данных');
-$dbc = mysqli_connect($server, $username, $password, $db) OR DIE('Ошибка подключения к базе данных');
+if ($server != null)
+	$dbc = mysqli_connect($server, $username, $password, $db) OR DIE('Ошибка подключения к базе данных');
+else
+	$dbc = mysqli_connect('localhost', 'root', '', 'lesson') OR DIE('Ошибка подключения к базе данных');
+
 if(isset($_POST['match_id'])){
 	$user_id = $_COOKIE['user_id'];
 	$match_id = mysqli_real_escape_string($dbc, trim($_POST['match_id']));
