@@ -247,7 +247,7 @@ h2 {
 table.r1 {
    font-family: 'WhitneyMedium';
   background-color: #f1ece3;
-  min-width: 500px;
+  min-width: 100%;
   min-height: 30%;
   text-align: center;
   border-collapse: collapse;
