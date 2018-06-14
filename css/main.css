@@ -105,8 +105,8 @@ header a {color: #0196d8;}
                background-repeat: repeat;
                background-size: 100%;
                 background-position: top center; 
-               min-height: 516px;
-               max-height: 1000px;}
+               height: 100% ;
+               }
 
 .match {font-family: "RobotoLight";
         font-size: 12px;
@@ -317,7 +317,7 @@ table.r1 tfoot .links a{
   text-decoration: none;
   user-select: none; 
   background:#0196d8; 
-  padding: .7em 0.3em; 
+  padding: 2% 5%; 
   outline: none; 
 font-family: 'WhitneyMedium';
           font-size: 12px;
@@ -328,9 +328,9 @@ font-family: 'WhitneyMedium';
 
 #baton:hover, #baton:active { background:#0a7eb2; transition: all .5s;}
 
-.inputcss {height: 30px;
-  min-width: 15%; 
+.inputcss {max-height: 30%;
   max-width: 30%; 
+ 
   background:white;
 color: #333; margin:4%;}
 
@@ -350,7 +350,7 @@ input::-webkit-inner-spin-button {
   text-decoration: none;
   user-select: none; 
   background:#0196d8; 
-  padding: .3em 1.5em; 
+  padding: 2% 5%; 
   outline: none; 
 font-family: 'BebasRegular';
           font-size: 16px;
