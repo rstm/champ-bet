@@ -161,7 +161,7 @@ if(!isset($_COOKIE['user_id'])) {
 				 14.06.2018 18:00 <br>
 				 	<div class="countries">
 				 		<img src="img/icons/Russia.png" alt="">Россия<br>
-				 		<img src="img/icons/Saudi Arabia.png" alt="">Сауд. Аравия<br>
+				 		<img src="img/icons/Saudi arabia.png" alt="">Сауд. Аравия<br>
 					</div>
 				(Группа А) Матч 1.<br>
 				 Москва, «Лужники»
