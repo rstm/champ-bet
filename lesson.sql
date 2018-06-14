@@ -23,6 +23,9 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+drop table if exists rates;
+drop table if exists matches;
+drop table if exists signup;
 
 --
 -- Структура таблицы `matches`
