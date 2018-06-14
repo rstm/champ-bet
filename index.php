@@ -76,7 +76,7 @@ if ($server != null)
 	$dbc = mysqli_connect($server, $username, $password, $db);
 else
 	$dbc = mysqli_connect('localhost', 'root', '', 'lesson');
-	
+
 if(!isset($_COOKIE['user_id'])) {
 	if(isset($_POST['submit'])) {
 		$user_username = mysqli_real_escape_string($dbc, trim($_POST['username']));
@@ -152,7 +152,7 @@ if(!isset($_COOKIE['user_id'])) {
 								    </div>
 									
 					</div>	
-				</div>s
+				</div>
 			</div>
         </div>
 	</header>
