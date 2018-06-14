@@ -433,7 +433,7 @@ if (isset($_COOKIE['user_id']))
  </div>
 </div>
 
-<?php echo date("Y-m-d H:i", time()) ?>
+<?php echo date("Y-m-d H:i", strtotime('+3 hours', time())) ?>
 
 
 
