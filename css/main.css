@@ -135,7 +135,7 @@ table.redTable {
   font-family: 'WhitneyBold';
    font-family: 'WhitneyMedium';
   background-color: #f1ece3;
-  width: 100%;
+  width: 98%;
   height: 30%;
   text-align: center;
   border-collapse: collapse;
@@ -247,7 +247,7 @@ h2 {
 table.r1 {
    font-family: 'WhitneyMedium';
   background-color: #f1ece3;
-  min-width: 100%;
+  min-width: 60%;
   min-height: 30%;
   text-align: center;
   border-collapse: collapse;
@@ -256,7 +256,7 @@ table.r1 {
 
 }
 
-table.r1 td, table.redTable th {
+table.r1 td {
    border: 0.5px solid #bdb289;
   padding: 2px 2px;
 }
@@ -303,7 +303,7 @@ table.r1 tfoot .links a{
 .sizeimg {height: 20%; width: 20%;
 }
 
-.inlineblock { display: inline-block; margin: 2px;}
+.inlineblock { display: inline-block; margin: 2px;  vertical-align:bottom;}
 
 .moshniydiv {text-align: center; color: #333; }
 
