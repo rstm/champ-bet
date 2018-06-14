@@ -72,8 +72,11 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-// $dbc = mysqli_connect('localhost', 'root', '', 'lesson');
-$dbc = mysqli_connect($server, $username, $password, $db);
+if ($server != null)
+	$dbc = mysqli_connect($server, $username, $password, $db);
+else
+	$dbc = mysqli_connect('localhost', 'root', '', 'lesson');
+	
 if(!isset($_COOKIE['user_id'])) {
 	if(isset($_POST['submit'])) {
 		$user_username = mysqli_real_escape_string($dbc, trim($_POST['username']));
