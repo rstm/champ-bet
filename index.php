@@ -433,7 +433,7 @@ if (isset($_COOKIE['user_id']))
  </div>
 </div>
 
-
+<?php echo time() ?>
 
 
 
