@@ -28,7 +28,7 @@ if(isset($_POST['match_id'])){
 	$score2 = mysqli_real_escape_string($dbc, trim($_POST['score2']));
 
 	if(!empty($match_id) && $score1 != null && $score2 != null && $score1 > -1 && $score2 > -1) {
-        $query ="UPDATE `matches` SET score1 = $score1, score2 = $score2 where match_id = $match_id";
+        $query ="UPDATE `matches` SET score1 = $score1, score2 = $score2 where id = $match_id";
 		mysqli_query($dbc,$query);
 		mysqli_close($dbc);
 	 	header("Location: admin.php");
