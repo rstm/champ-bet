@@ -45,6 +45,7 @@ else
             </div></td>";
             echo "<td><div class='match_3'>VS.</div></td>";
             echo "<td><div><img src=\"img/icons/$command2name.png\"></br><div class='match_2'>$match->command2</div></div><br><div class='score'>$match->score2</div></td>";
+            echo "<td><br>$match->score1 - $match->score2</br></td>";
 
             ?>
             
