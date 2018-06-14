@@ -26,7 +26,7 @@ else
         $rows = mysqli_num_rows($result); // количество полученных строк
          
         echo "<table class='redTable'>";
-        while($match = mysqli_fetch_object($result)
+        while($match = mysqli_fetch_object($result))
         {
             echo "<tr>";
 
