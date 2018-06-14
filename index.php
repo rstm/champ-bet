@@ -385,7 +385,7 @@ if (isset($_COOKIE['user_id']))
 		        // echo(date("Y-m-d H:i",strtotime($match->datetime)));
 		        // echo "<br>";
 
-		        if (time() < strtotime($match->datetime)) {
+		        if ($match->id != 1 && time() < strtotime($match->datetime)) {
 		        ?>
 				
 				<td>
@@ -397,7 +397,9 @@ if (isset($_COOKIE['user_id']))
 			  	</td>
 
 		        <?php
-	    		} else echo "<td class='match_number'>Ставок больше нет</td>";
+				} else echo "<td class='match_number'>Ставок больше нет</td>";
+				
+				else echo "<td class='match_number'>Ставок больше нет</td>";
 				 
 				 if ($rate->rate1 != null) {
 					 echo "<td><div class='moshniydiv'>Ваш прогноз:<br><div class='inlineblock'><img class='sizeimg inlineblock' src=\"img/icons/$command1name.png\"><div class='prognoz inlineblock'>$rate->rate1 - $rate->rate2</div><img class='sizeimg inlineblock' src=\"img/icons/$command2name.png\"></div></div></td>";
