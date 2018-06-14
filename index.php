@@ -385,7 +385,7 @@ if (isset($_COOKIE['user_id']))
 		        // echo(date("Y-m-d H:i",strtotime($match->datetime)));
 		        // echo "<br>";
 
-		        if ($match->id != 1 && time() < strtotime($match->datetime)) {
+		        if (strtotime('+3 hours', time() < strtotime($match->datetime)) {
 		        ?>
 				
 				<td>
@@ -432,10 +432,6 @@ if (isset($_COOKIE['user_id']))
 
  </div>
 </div>
-
-<?php echo date("Y-m-d H:i", strtotime('+3 hours', time())) ?>
-
-
 
 
 
