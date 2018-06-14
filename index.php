@@ -395,8 +395,11 @@ if (isset($_COOKIE['user_id']))
 		        <?php
 	    		} else echo "<td id='id'>Ставок больше нет</td>";
 				 
-				 if ($rate->rate1 != null) {echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"img/icons/$match->command1.png\"><div class='prognoz inlineblock'>$rate->rate1 - $rate->rate2</div><img class='sizeimg inlineblock' src=\"img/icons/$match->command2.png\"></div></td>";} 
-				 else echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"img/icons/empty.png\"></div></td>";
+				 if ($rate->rate1 != null) {
+					 echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"img/icons/$command1name.png\"><div class='prognoz inlineblock'>$rate->rate1 - $rate->rate2</div><img class='sizeimg inlineblock' src=\"img/icons/$command2name.png\"></div></td>";
+					} 
+				 else 
+				 	echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"img/icons/empty.png\"></div></td>";
 				 
 				 echo "</tr>";
 
