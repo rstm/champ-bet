@@ -53,7 +53,7 @@ body {
 
 header {
 	    
-	    min-height: 100px;
+	    min-height: 122px;
 	  
 	    position: relative;
 	    font-family: 'BebasRegular';
@@ -61,7 +61,7 @@ header {
 
 header a {color: #0196d8;}
 
-.top_line {min-height: 100px; 
+.top_line {min-height: 122px; 
 		  top: 0;
 		  width: 100%;
 		  background-image: url(../img/bg_firstline.jpg);
@@ -102,10 +102,11 @@ header a {color: #0196d8;}
                padding-bottom: 10px; padding-top: 10px;}
 
 .third_line { background-image: url(../img/bg_thirdline.jpg);
-               background-repeat: repeat-x;
+               background-repeat: repeat;
                background-size: 100%;
                 background-position: top center; 
-               min-height: 516px;}
+               min-height: 516px;
+               max-height: 1000px;}
 
 .match {font-family: "RobotoLight";
         font-size: 12px;
@@ -113,7 +114,7 @@ header a {color: #0196d8;}
         text-align:center;
         }
 
-.countries {text-align: left; font-size: 30px;}
+.countries {text-align: left; font-size: 28px;}
 .countries img {margin-right: 5px;}
 
 
@@ -140,13 +141,23 @@ table.redTable {
   border-collapse: collapse;
 
 }
+
+
+
 table.redTable td, table.redTable th {
-  border-bottom: 2px hidden #b8a95c;
+   border-bottom: 0.5px solid #bdb289;
   padding: 20px 2px;
 }
+
+table.redTable td:lastchild, table.redTable th:lastchild {
+   border-bottom: 0.5px hidden #bdb289;
+  padding: 20px 2px;
+}
+
 table.redTable tbody td {
   font-size: 13px;
   color: #333333;
+
 }
 
 table.redTable thead {
@@ -157,7 +168,6 @@ table.redTable thead th {
   font-weight: bold;
   color: #FFFFFF;
   text-align: center;
-  border-left: 2px solid #20368c;
 }
 table.redTable thead th:first-child {
   border-left: none;
@@ -183,10 +193,10 @@ table.redTable tfoot .links a{
   border-radius: 5px;
 }
 
-.position {display:block; margin: 100px auto;}
+.position {display:block; margin: 15px auto; text-align: center;}
 
 .content {
- padding-top: 50px;
+ padding-top: 35px;
   }
 
 
@@ -196,9 +206,11 @@ table.redTable tfoot .links a{
 
 h2 {
     
-    color: #ece7d3;
+    color: #a71017;
     font-size:28px; 
-   font-family: '7738';}
+   font-family: '7738';
+   text-align:center;
+  }
 
 
 #id {color: #7e7e7e;
@@ -207,9 +219,171 @@ h2 {
     font-size: 14px;}
 
 #raspisanie {font-family: 'Dusha_FIFA_World_Cup_2018';
-            font-size: 76px;
+            font-size: 72px;
             line-height: 76px;
             color: #333;
            font-style: normal;
           font-weight: 400;
-          text-align: center;}
+          text-align: center;
+          padding-top: 10px;}
+
+.score {font-family: 'Dusha_FIFA_World_Cup_2018';
+       font-size: 30px;
+       color: #333;}
+
+.match_2 {font-family: 'WhitneyBold';
+          padding-top: 8px;
+         color: #bdb289;
+        font-size: 25px;}
+
+.match_3 {font-family: 'WhitneyBold';
+          padding-top: 8px;
+         color: #333;
+        font-size: 15px;}
+
+
+.r21 {font-family:  'BebasRegular'; font-size: 20px;}
+
+table.r1 {
+   font-family: 'WhitneyMedium';
+  background-color: #f1ece3;
+  min-width: 500px;
+  min-height: 30%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: auto;
+  margin-top: 20px;
+
+}
+
+table.r1 td, table.redTable th {
+   border: 0.5px solid #bdb289;
+  padding: 2px 2px;
+}
+
+table.r1 tbody td {
+  font-size: 13px;
+  color: #333333;
+
+}
+
+table.r1 thead {
+  background: #20368c;
+}
+table.r1 thead th {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+}
+table.r1 thead th:first-child {
+  border-left: none;
+}
+
+table.r1 tfoot {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #20368c;
+}
+table.r1 tfoot td {
+  font-size: 13px;
+}
+table.r1 tfoot .links {
+  text-align: right;
+}
+table.r1 tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #20368c;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.sizeimg {height: 20%; width: 20%;
+}
+
+.inlineblock { display: inline-block; margin: 2px;}
+
+.moshniydiv {text-align: center; color: #333; }
+
+.prognoz {font-family: 'WhitneyMedium';
+          font-size: 16px;
+          color: #333; 
+
+        }
+
+#baton {  color: #fff;
+  text-decoration: none;
+  user-select: none; 
+  background:#0196d8; 
+  padding: .7em 0.3em; 
+  outline: none; 
+font-family: 'WhitneyMedium';
+          font-size: 12px;
+          color: #f1ece3;
+          border: none;
+          transition: all .3s;
+        }
+
+#baton:hover, #baton:active { background:#0a7eb2; transition: all .5s;}
+
+.inputcss {height: 30px;
+  min-width: 15%; 
+  max-width: 30%; 
+  background:white;
+color: #333; margin:4%;}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.ex {float: right}
+
+#baton2 {  
+  margin-top: 4px;
+  color: #fff;
+  text-decoration: none;
+  user-select: none; 
+  background:#0196d8; 
+  padding: .3em 1.5em; 
+  outline: none; 
+font-family: 'BebasRegular';
+          font-size: 16px;
+          color: #f1ece3;
+          border: none;
+          transition: all .3s;
+          margin-left: 17px;
+        }
+
+#baton2:hover, #baton:active { background:#0a7eb2; transition: all .3s;}
+
+#a {border-bottom: none; font-size: 17px; 
+
+  font-family: 'BebasRegular';
+margin-left: 10px;}
+
+#a:hover {color: #0a7eb2;  transition: all .3s; }
+
+#raspisanie2 {font-family: 'Dusha_FIFA_World_Cup_2018';
+            font-size: 72px;
+            color: #f1ece3;
+           font-style: normal;
+          font-weight: 400;
+          text-align: center;
+          padding-top: 3px;}
+
+.pravila {font-family: 'Dusha_FIFA_World_Cup_2018';
+font-size: 30px;
+            color: #f1ece3;
+            text-align: center;}
+
+.reglament {font-size: 18px;
+            color: #f1ece3;
+            text-align: center;}
+
+.blocks {display: block;}

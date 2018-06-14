@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ERROR</title>
+<link href="style/style1.css" rel="stylesheet">
+</head>
+
+ <body>
+
 <?php
 
 $dbc = mysqli_connect('localhost', 'root', '', 'lesson') OR DIE('Ошибка подключения к базе данных');
@@ -6,12 +16,7 @@ if(isset($_POST['match_id'])){
 	$match_id = mysqli_real_escape_string($dbc, trim($_POST['match_id']));
 	$rate1 = mysqli_real_escape_string($dbc, trim($_POST['rate1']));
 	$rate2 = mysqli_real_escape_string($dbc, trim($_POST['rate2']));
-	echo $match_id;
-	echo "<br>";
-	echo $rate1;
-	echo "<br>";
-	echo $rate2;
-	echo "<br>";
+
 	if(!empty($match_id) && $rate1 != null && $rate2 != null && $rate1 > -1 && $rate2 > -1) {
 		$query = "SELECT * FROM `rates` WHERE match_id = $match_id and user_id = $user_id";
 		$data = mysqli_query($dbc, $query);
@@ -26,7 +31,19 @@ if(isset($_POST['match_id'])){
 	 	header('Location: ' . $home_url);
 	}
 	else {
-		echo "упс. что то пошло не так, обратись к Демиду";
+		echo "<h2>Ошибка, попробуйте ещё раз! </h2>";
+		echo "<div class='a2'>1)Возможно вы не ввели одно из значений</div>";
+		echo "<div class='a2'>2)Возможно вы ввели недопустимое значение</div>";
+		echo "<div class='a2'>Если не получилось исправить, обратитесь к Демиду!</div>";
+
 	}
 }
 ?>
+
+
+ 
+</body>
+  
+  
+</body>
+</html>

@@ -1,0 +1,23 @@
+body{
+  background: url(../img/7ffa873d.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% ;
+  font-family:'Open Sans', Arial, sans-serif;
+  font-size: 50px;
+  color: white;
+  text-align: center;s
+
+}
+h2{
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 0 #000;
+  font-size: 50px;
+  padding-top: 100px;
+}
+
+.a2 {padding-top:20px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+}

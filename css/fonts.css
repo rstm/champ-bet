@@ -60,6 +60,16 @@
 }
 
 @font-face {
+    font-family: 'WhitneyBold';
+    src: url('fonts/WhitneyBold.eot');
+    src: url('fonts/WhitneyBold.eot') format('embedded-opentype'),
+         url('fonts/WhitneyBold.woff2') format('woff2'),
+         url('fonts/WhitneyBold.woff') format('woff'),
+         url('fonts/WhitneyBold.ttf') format('truetype'),
+         url('fonts/WhitneyBold.svg#WhitneyBold') format('svg');
+}
+
+@font-face {
     font-family: 'WhitneyMedium';
     src: url('fonts/WhitneyMedium.eot');
     src: url('fonts/WhitneyMedium.eot') format('embedded-opentype'),
@@ -69,4 +79,13 @@
          url('fonts/WhitneyMedium.svg#WhitneyMedium') format('svg');
 }
 
+@font-face {
+    font-family: 'Dusha_FIFA_World_Cup_2018';
+    src: url('fonts/Dusha_FIFA_World_Cup_2018.eot');
+    src: url('fonts/Dusha_FIFA_World_Cup_2018.eot') format('embedded-opentype'),
+         url('fonts/Dusha_FIFA_World_Cup_2018.woff2') format('woff2'),
+         url('fonts/Dusha_FIFA_World_Cup_2018.woff') format('woff'),
+         url('fonts/Dusha_FIFA_World_Cup_2018.ttf') format('truetype'),
+         url('fonts/Dusha_FIFA_World_Cup_2018.svg#Dusha_FIFA_World_Cup_2018') format('svg');
+}
 

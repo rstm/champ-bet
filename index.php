@@ -59,7 +59,7 @@ else document.getElementById("doc_time").innerHTML = date_time;
 	<link rel="stylesheet" href="css/fonts.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<link rel="stylesheet" href="css/media.css" />
-	 <link rel="shortcut icon" href="../img/01.png" type="image/png">
+	 <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 	<div class="error">
@@ -121,14 +121,14 @@ if(!isset($_COOKIE['user_id'])) {
 									<input type="password" name="password">
 									</div>
 									 <div class="field">
-									<button type="submit" name="submit">Войти</button>
-									<a href="signup.php">Регистрация</a></div>
+									<button id="baton2" type="submit" name="submit">Войти</button>
+									<a id='a' href="signup.php">Регистрация</a></div>
 									</form>
 								<?php
 								}
 								else {0
 									?>
-									<p><a href="exit.php">Выйти (<?php echo $_COOKIE['username']; ?>)</a></p>
+									<div class="ex"><a href="exit.php">Выйти (<?php echo $_COOKIE['username']; ?>)</a></div>
 								<?php	
 								}
 								?>
@@ -139,7 +139,7 @@ if(!isset($_COOKIE['user_id'])) {
 								    </div>
 									
 					</div>	
-				</div>
+				</div>s
 			</div>
         </div>
 	</header>
@@ -150,38 +150,45 @@ if(!isset($_COOKIE['user_id'])) {
 				<div class="match">
 				 14.06.2018 18:00 <br>
 				 	<div class="countries">
-				 		<img src="img/icons/Russia.png" alt="">Россия <br>
-				 		<img src="img/icons/SaudiArabia.png" alt="">Саудовская Аравия <br>
+				 		<img src="img/icons/Russia.png" alt="">Россия<br>
+				 		<img src="img/icons/Saudi Arabia.png" alt="">Сауд. Аравия<br>
 					</div>
 				(Группа А) Матч 1.<br>
-				 Москва, Стадион лужники
+				 Москва, «Лужники»
 				</div>
 			</div>
-			<div class="col-md-3"><div class="match">
-				  (Группа А) Матч 1.<br>
+			<div class="col-md-3">
+				<div class="match">
+				 15.06.2018 15:00 <br>
 				 	<div class="countries">
-				 		<img src="img/icons/Russia.png" alt="">Россия <br>
-				 		<img src="img/icons/SaudiArabia.png" alt="">Саудовская Аравия <br>
+				 		<img src="img/icons/Egypt.png" alt="">Египет<br>
+				 		<img src="img/icons/Uruguay.png" alt="">Уругвай<br>
 					</div>
-				 14.06.2018 18:00
-				</div></div>
-			<div class="col-md-3"><div class="match">
-				  (Группа А) Матч 1.<br>
+				(Группа А) Матч 2.<br>
+				 Екатеринбург, «Екатеринбург арена»
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="match">
+				 15.06.2018 18:00 <br>
 				 	<div class="countries">
-				 		<img src="img/icons/Russia.png" alt="">Россия <br>
-				 		<img src="img/icons/SaudiArabia.png" alt="">Саудовская Аравия <br>
+				 		<img src="img/icons/Morocco.png" alt="">Марокко<br>
+				 		<img src="img/icons/Iran.png" alt="">Иран<br>
 					</div>
-				 14.06.2018 18:00
-				</div></div>
+				(Группа В) Матч 3.<br>
+				 Санкт-Петербург, «Санкт-Петербург»
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="third_line">
 		<div class="container">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-2">
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-8">
 			<div class="position">
+				<div id="raspisanie2">Турнирная таблица</div>
 <?php
 
  
@@ -253,8 +260,8 @@ if($result)
 		$check_ratings[$max_index] = -1;
 		$sorted_ratings[$i] = $max_index;
     }
-
-    echo "<table class='redTable'><tr><th>Место</th><th>Никнейм</th><th>Рейтинг</th></tr>";
+  
+    echo "<table class='r1'><tr class='r21'><th>Место</th><th>Никнейм</th><th>Рейтинг</th></tr>";
     for ($i=0; $i < sizeof($sorted_ratings); $i++) { 
     	$k = $sorted_ratings[$i];
     	$number = $i + 1;
@@ -279,10 +286,18 @@ if($result)
 			
 		</div>
 	</div>
-		<div class="col-md-4">
+		<div class="col-md-2">
 		</div>
+
+	  
 		
 	</div>
+	<div class="pravila">
+	  	Правила: 
+	  	<div class="reglament">Точный счёт - 3 очка. <br>
+	  	Угаданная разница - 2 очка. <br>
+	  	Предсказанный исход матча - 1 очко.</div>
+	  </div>
 </div>
 
 
@@ -301,7 +316,6 @@ if($result)
 				</div>
 			</div>
 		</div>
-	</div>
      	<div class="container">
 			<div class="row">
 				<div class="col-md-1">
@@ -324,7 +338,7 @@ if (isset($_COOKIE['user_id']))
 		{
 		    $rows = mysqli_num_rows($result); // количество полученных строк
 		     
-		    echo "<table class='redTable'><tr><th>Матч №</th><th>Информация о матче</th><th>Счёт</th><th>Дата и время</th><th>Ваша ставка:</th><th></th></tr>";
+		    echo "<table class='redTable'>";
 		    for ($i = 0 ; $i < $rows ; ++$i)
 		    {
 		    	$match = mysqli_fetch_object($result);
@@ -338,16 +352,16 @@ if (isset($_COOKIE['user_id']))
 			    	$rate->rate2 = null;
 			    	
 			    }
-
-			   
+              
 				echo "<tr>";
+
 		        echo "<td id='id'>#$match->id<br>$match->datetime</td>";
-		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command1.png\"></br>$match->command1</div></td>";
-		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command2.png\"></br>$match->command2</div></td>";
+		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command1.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
+		        </div></td>";
+		        echo "<td><div class='match_3'>VS.</div></td>";
+		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command2.png\"></br><div class='match_2'>$match->command2</div></div><br><div class='score'>$match->score2</div></td>";
 
-
-		        echo "<td>$match->score1 - $match->score2</td>";
-		        echo "<td>$rate->rate1 - $rate->rate2</td>";
+		        
 
 		        // echo(date("Y-m-d H:i",time()));
 		        // echo "<br>";
@@ -360,16 +374,24 @@ if (isset($_COOKIE['user_id']))
 				<td>
 		          	<form method="POST" action="/signup.ru/create_rate.php">
 						<input type="hidden" name="match_id" value="<?=$match->id?>">
-						<input class="rate-input" type="number" name="rate1" >-<input class="rate-input" type="number" name="rate2" >
-					    <button type="submit" name="submit">Сделать ставку</button>
+						<input class="rate-input inputcss" type="number" name="rate1" >-<input class="rate-input inputcss" type="number" name="rate2" ><br>
+					    <button id="baton" type="submit" name="submit">Сделать ставку</button>
 			  		</form>
 			  	</td>
 
 		        <?php
-	    		} else echo "<td>Ставок больше нет</td>";
-				echo "</tr>";
+	    		} else echo "<td id='id'>Ставок больше нет</td>";
+				 
+				 if ($rate->rate1 != null) {echo "<td class='blocks'><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/$match->command1.png\"><div class='prognoz inlineblock'>$rate->rate1 - $rate->rate2</div><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/$match->command2.png\"></div></td>";} 
+				 else echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/empty.png\"></div></td>";
+				 
+				 echo "</tr>";
+
+
 		    }
+		   
 		    echo "</table>";
+
 		     
 		    // очищаем результат
 		    mysqli_free_result($result);
@@ -379,7 +401,7 @@ if (isset($_COOKIE['user_id']))
 		?>
 		</div>
 <?php } else { ?>
-	<div class="position"><h2>Необходимо авторизоваться!</h2></div>
+	<div class="position"><h2>Для просмотра необходимо авторизоваться!</h2></div>
 <?php } ?>
 			
 		</div>
