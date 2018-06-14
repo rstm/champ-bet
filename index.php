@@ -368,11 +368,11 @@ if (isset($_COOKIE['user_id']))
 				$command1name = ucfirst(strtolower($match->command1));
 				$command2name = ucfirst(strtolower($match->command2));
 				
-		        echo "<td id='match_number'>#$match->id<br>$match->datetime</td>";
-		        echo "<td><div><img src=\"/signup.ru/img/icons/$command1name.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
+		        echo "<td id='match$match->id' class='match_number'>#$match->id<br>$match->datetime</td>";
+		        echo "<td><div><img src=\"img/icons/$command1name.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
 		        </div></td>";
 		        echo "<td><div class='match_3'>VS.</div></td>";
-		        echo "<td><div><img src=\"/signup.ru/img/icons/$command2name.png\"></br><div class='match_2'>$match->command2</div></div><br><div class='score'>$match->score2</div></td>";
+		        echo "<td><div><img src=\"img/icons/$command2name.png\"></br><div class='match_2'>$match->command2</div></div><br><div class='score'>$match->score2</div></td>";
 
 		        
 
