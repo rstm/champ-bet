@@ -213,7 +213,7 @@ h2 {
   }
 
 
-#id {color: #7e7e7e;
+#match_number {color: #7e7e7e;
     font-weight: 600;
     line-height: 18px;
     font-size: 14px;}
@@ -386,4 +386,3 @@ font-size: 30px;
             color: #f1ece3;
             text-align: center;}
 
-.blocks {display: block;}

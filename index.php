@@ -355,7 +355,7 @@ if (isset($_COOKIE['user_id']))
               
 				echo "<tr>";
 
-		        echo "<td id='id'>#$match->id<br>$match->datetime</td>";
+		        echo "<td id='match_number'>#$match->id<br>$match->datetime</td>";
 		        echo "<td><div><img src=\"/signup.ru/img/icons/$match->command1.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
 		        </div></td>";
 		        echo "<td><div class='match_3'>VS.</div></td>";
@@ -382,7 +382,7 @@ if (isset($_COOKIE['user_id']))
 		        <?php
 	    		} else echo "<td id='id'>Ставок больше нет</td>";
 				 
-				 if ($rate->rate1 != null) {echo "<td class='blocks'><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/$match->command1.png\"><div class='prognoz inlineblock'>$rate->rate1 - $rate->rate2</div><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/$match->command2.png\"></div></td>";} 
+				 if ($rate->rate1 != null) {echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/$match->command1.png\"><div class='prognoz inlineblock'>$rate->rate1 - $rate->rate2</div><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/$match->command2.png\"></div></td>";} 
 				 else echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"/signup.ru/img/icons/empty.png\"></div></td>";
 				 
 				 echo "</tr>";
