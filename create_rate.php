@@ -28,23 +28,32 @@ if(isset($_POST['match_id'])){
 	$rate2 = mysqli_real_escape_string($dbc, trim($_POST['rate2']));
 
 	if(!empty($match_id) && $rate1 != null && $rate2 != null && $rate1 > -1 && $rate2 > -1) {
-		$query = "SELECT * FROM `rates` WHERE match_id = $match_id and user_id = $user_id";
-		$data = mysqli_query($dbc, $query);
-		if(mysqli_num_rows($data) == 0) {
-			$query ="INSERT INTO `rates` (user_id, match_id, rate1, rate2) VALUES ('$user_id', '$match_id', '$rate1', '$rate2')";
-		 } else {
-			$query ="UPDATE `rates` SET rate1 = $rate1, rate2 = $rate2 where match_id = $match_id and user_id = $user_id";
-		 }
-		mysqli_query($dbc,$query);
-		mysqli_close($dbc);
-	 	header("Location: index.php#match$match_id");
+
+		$querym = "SELECT * FROM `rates` WHERE match_id = $match_id and user_id = $user_id";
+		$datam = mysqli_query($dbc, $query);
+		$match = mysqli_fetch_object($result_m);
+		
+		if ((strtotime('+3 hours', time()) < strtotime($match->datetime))) {
+			$query = "SELECT * FROM `rates` WHERE match_id = $match_id and user_id = $user_id";
+			$data = mysqli_query($dbc, $query);
+			if(mysqli_num_rows($data) == 0) {
+				$query ="INSERT INTO `rates` (user_id, match_id, rate1, rate2) VALUES ('$user_id', '$match_id', '$rate1', '$rate2')";
+			 } else {
+				$query ="UPDATE `rates` SET rate1 = $rate1, rate2 = $rate2 where match_id = $match_id and user_id = $user_id";
+			 }
+			mysqli_query($dbc,$query);
+			mysqli_close($dbc);
+			header("Location: index.php#match$match_id");
+		}
+		else {
+			echo "<h2>Увы, матч уже идет..</h2>";
+		}
 	}
 	else {
 		echo "<h2>Ошибка, попробуйте ещё раз! </h2>";
 		echo "<div class='a2'>1)Возможно вы не ввели одно из значений</div>";
 		echo "<div class='a2'>2)Возможно вы ввели недопустимое значение</div>";
 		echo "<div class='a2'>Если не получилось исправить, обратитесь к Демиду!</div>";
-
 	}
 }
 ?>
