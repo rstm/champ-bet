@@ -30,10 +30,10 @@ if(isset($_POST['match_id'])){
 	if(!empty($match_id) && $rate1 != null && $rate2 != null && $rate1 > -1 && $rate2 > -1) {
 
 		$querym = "SELECT * FROM `matches` WHERE id = $match_id";
-		$datam = mysqli_query($dbc, $query);
-		$match = mysqli_fetch_object($result_m);
+		$datam = mysqli_query($dbc, $querym);
+		$match = mysqli_fetch_object($datam);
 		
-		// if ((strtotime('+3 hours', time()) < strtotime($match->datetime))) {
+		if ((strtotime('+3 hours', time()) < strtotime($match->datetime))) {
 			$query = "SELECT * FROM `rates` WHERE match_id = $match_id and user_id = $user_id";
 			$data = mysqli_query($dbc, $query);
 			if(mysqli_num_rows($data) == 0) {
@@ -44,10 +44,10 @@ if(isset($_POST['match_id'])){
 			mysqli_query($dbc,$query);
 			mysqli_close($dbc);
 			header("Location: index.php#match$match_id");
-		// }
-		// else {
-		// 	echo "<h2>Увы, матч уже идет..</h2>";
-		// }
+		}
+		else {
+			echo "<h2>Увы, матч уже идет..</h2>";
+		}
 	}
 	else {
 		echo "<h2>Ошибка, попробуйте ещё раз! </h2>";
