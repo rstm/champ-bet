@@ -57,8 +57,10 @@ else document.getElementById("doc_time").innerHTML = date_time;
 	<link rel="stylesheet" href="libs/owl-carousel/owl.carousel.css" />
 	<link rel="stylesheet" href="libs/countdown/jquery.countdown.css" />
 	<link rel="stylesheet" href="css/fonts.css" />
-	<link rel="stylesheet" href="css/main.css" />
+	
 	<link rel="stylesheet" href="css/media.css" />
+	<link rel="stylesheet" media="screen and (min-width: 1px) and (max-width: 800px)" href="css/main_mobile.css">
+	<link rel="stylesheet" media="screen and (min-width: 801px) and (max-width: 5000px)" href="css/main.css">
 	 <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -161,17 +163,6 @@ if(!isset($_COOKIE['user_id'])) {
 			<div class="col-md-3"><div class="content">Ближайшие матчи:</div></div>
 			<div class="col-md-3">
 				<div class="match">
-				 14.06.2018 18:00 <br>
-				 	<div class="countries">
-				 		<img src="img/icons/Russia.png" alt="">Россия<br>
-				 		<img src="img/icons/Saudi arabia.png" alt="">Сауд. Аравия<br>
-					</div>
-				(Группа А) Матч 1.<br>
-				 Москва, «Лужники»
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="match">
 				 15.06.2018 15:00 <br>
 				 	<div class="countries">
 				 		<img src="img/icons/Egypt.png" alt="">Египет<br>
@@ -191,6 +182,17 @@ if(!isset($_COOKIE['user_id'])) {
 				(Группа В) Матч 3.<br>
 				
 				 Санкт-Петербург, «Санкт-Петербург»
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="match">
+				 14.06.2018 21:00 <br>
+				 	<div class="countries">
+				 		<img src="img/icons/Russia.png" alt="">Россия<br>
+				 		<img src="img/icons/Saudi arabia.png" alt="">Сауд. Аравия<br>
+					</div>
+				(Группа А) Матч 1.<br>
+				 Москва, «Лужники»
 				</div>
 			</div>
 		</div>
@@ -329,13 +331,9 @@ if($result)
 				<div class="col-md-2">
 				</div>
 			</div>
-		</div>
-     	<div class="container">
-			<div class="row">
-				<div class="col-md-1">
-				</div>
-     			<div class="col-md-10">
-	
+		
+
+     	
 <?php
 
 if (isset($_COOKIE['user_id'])) 
@@ -419,18 +417,15 @@ if (isset($_COOKIE['user_id']))
 		 
 		mysqli_close($dbc);
 		?>
-		</div>
+		</div></div>
 <?php } else { ?>
 	<div class="position"><h2>Для просмотра необходимо авторизоваться!</h2></div>
 <?php } ?>
 			
-		</div>
-		<div class="col-md-1">
-		</div>
+		
+    
 
-     </div>
-
- </div>
+ 
 </div>
 
 
