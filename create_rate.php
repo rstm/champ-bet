@@ -29,7 +29,7 @@ if(isset($_POST['match_id'])){
 
 	if(!empty($match_id) && $rate1 != null && $rate2 != null && $rate1 > -1 && $rate2 > -1) {
 
-		$querym = "SELECT * FROM `rates` WHERE match_id = $match_id and user_id = $user_id";
+		$querym = "SELECT * FROM `matches` WHERE id = $match_id";
 		$datam = mysqli_query($dbc, $query);
 		$match = mysqli_fetch_object($result_m);
 		
