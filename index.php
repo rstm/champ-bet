@@ -186,10 +186,10 @@ if(!isset($_COOKIE['user_id'])) {
 			</div>
 			<div class="col-md-3">
 				<div class="match">
-				 14.06.2018 21:00 <br>
+				 15.06.2018 21:00 <br>
 				 	<div class="countries">
-				 		<img src="img/icons/Russia.png" alt="">Россия<br>
-				 		<img src="img/icons/Saudi arabia.png" alt="">Сауд. Аравия<br>
+				 		<img src="img/icons/Russia.png" alt="">Португалия<br>
+				 		<img src="img/icons/Saudi arabia.png" alt="">Испания<br>
 					</div>
 				(Группа А) Матч 1.<br>
 				 Москва, «Лужники»
