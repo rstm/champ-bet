@@ -511,6 +511,8 @@ if (isset($_COOKIE['user_id']))
 		     
 		    // очищаем результат
 		    mysqli_free_result($result);
+
+		    
 		}
 		 
 		mysqli_close($dbc);
