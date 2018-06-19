@@ -160,41 +160,120 @@ if(!isset($_COOKIE['user_id'])) {
 	</header>
 	<div class="second_line">
 		<div class="container">
-			<div class="col-md-3"><div class="content">Ближайшие матчи:</div></div>
+		<div class="row">
 			<div class="col-md-3">
-				<div class="match">
-				 15.06.2018 15:00 <br>
-				 	<div class="countries">
-				 		<img src="img/icons/Egypt.png" alt="">Египет<br>
-				 		<img src="img/icons/Uruguay.png" alt="">Уругвай<br>
-					</div>
-				(Группа А) Матч 2.<br>
-				 Екатеринбург, «Екатеринбург арена»
-				</div>
+				<div class="content">Ближайшие матчи:</div>
 			</div>
-			<div class="col-md-3">
-				<div class="match">
-				 15.06.2018 18:00 <br>
-				 	<div class="countries">
-				 		<img src="img/icons/Morocco.png" alt="">Марокко<br>
-				 		<img src="img/icons/Iran.png" alt="">Иран<br>
-					</div>
-				(Группа В) Матч 3.<br>
-				
-				 Санкт-Петербург, «Санкт-Петербург»
-				</div>
-			</div>
-			<div class="col-md-3">
-				<div class="match">
-				 15.06.2018 21:00 <br>
-				 	<div class="countries">
-				 		<img src="img/icons/Russia.png" alt="">Португалия<br>
-				 		<img src="img/icons/Saudi arabia.png" alt="">Испания<br>
-					</div>
-				(Группа А) Матч 1.<br>
-				 Москва, «Лужники»
-				</div>
-			</div>
+			
+
+
+
+
+<?php
+			
+			 $query = "SELECT * FROM `matches`";
+			 $result = mysqli_query($dbc, $query) or die("Ошибка!" . mysqli_error($dbc));
+			
+			 $array_of_datetime = array(); 
+			 $sorted_array_of_datetime = array();
+			 $sorted_matchname = array();
+			 $vs = ' ' . 'VS.' . ' ';
+
+
+        if($result) 
+        {
+             $rows = mysqli_num_rows($result); // количество полученных строк
+             for ($i = 0 ; $i < $rows ; ++$i) // создаём массив матчей
+             {
+             $match = mysqli_fetch_object($result);
+             $sorted_array_of_datetime[$i] = $match->datetime; // создаём массив datetime (затем его сортируем)
+             $sorted_matchname[$i] = $match->datetime;
+             $command_1 = ucfirst(strtolower($match->command1));
+			 $command_2 = ucfirst(strtolower($match->command2));
+			 $sorted_command_1[$i] = $command_1;
+ 		     $sorted_command_2[$i] = $command_2;
+			 }
+             
+
+             for ($j = 0 ; $j < ($rows - 1) ; ++$j)
+             {
+             	for ($i = 0 ; $i < ($rows - 1) ; ++$i)
+             {
+
+               if ($sorted_array_of_datetime[$i] > $sorted_array_of_datetime[$i+1]) 
+
+               {
+               	$empty = $sorted_array_of_datetime[$i];
+               	$sorted_array_of_datetime[$i] = $sorted_array_of_datetime[$i+1];
+               	$sorted_array_of_datetime[$i+1] = $empty;
+
+               	$empty = $sorted_command_1[$i];
+               	$sorted_command_1[$i] = $sorted_command_1[$i+1];
+               	$sorted_command_1[$i+1] = $empty;
+
+	            $empty = $sorted_command_2[$i];
+               	$sorted_command_2[$i] = $sorted_command_2[$i+1];
+               	$sorted_command_2[$i+1] = $empty;
+               }
+             }
+             }
+        }
+$j=0;
+for ($i = 0 ; $i < ($rows) ; ++$i) {
+	 
+     if (strtotime('+3 hours', time()) < strtotime($sorted_array_of_datetime[$i]) and ($j<3))
+	{
+        echo "<div class='col-md-3'>";
+        echo "<div class='match'>";
+        echo "<div class='countries'>";
+		echo "<img src=\"img/icons/$sorted_command_1[$i].png\">";
+		
+        echo "$sorted_command_1[$i]";
+        echo "<br>";
+        echo "<img src=\"img/icons/$sorted_command_2[$i].png\">";
+        echo "$sorted_command_2[$i]";
+        echo "<div class='time'>$sorted_array_of_datetime[$i]</div>";
+        echo "</div>";
+
+        
+        echo "<br>";
+        echo "</div>";
+        echo "</div>";
+        $j=$j+1;
+		
+
+
+
+	}
+ 
+}
+
+
+
+
+			 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
 		</div>
 	</div>
 	<div class="third_line">

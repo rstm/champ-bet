@@ -105,8 +105,8 @@ header a {color: #0196d8;}
                background-repeat: repeat;
                background-size: 100%;
                 background-position: top center; 
-               height: 100% ;
-               }
+               min-height: 516px;
+               max-height: 1000px;}
 
 .match {font-family: "RobotoLight";
         font-size: 12px;
@@ -135,9 +135,8 @@ table.redTable {
   font-family: 'WhitneyBold';
    font-family: 'WhitneyMedium';
   background-color: #f1ece3;
-   min-width: 100%;
-  min-height: 30%;
-  max-width: 100%; overflow: auto;
+  width: 100%;
+  height: 30%;
   text-align: center;
   border-collapse: collapse;
 
@@ -152,7 +151,7 @@ table.redTable td, table.redTable th {
 
 table.redTable td:lastchild, table.redTable th:lastchild {
    border-bottom: 0.5px hidden #bdb289;
-  padding: 15px 0.5px;
+  padding: 20px 2px;
 }
 
 table.redTable tbody td {
@@ -194,11 +193,10 @@ table.redTable tfoot .links a{
   border-radius: 5px;
 }
 
-.position {display:block; margin: 10px auto; text-align: center;}
+.position {display:block; margin: 15px auto; text-align: center;}
 
 .content {
- padding-top: 7vw;
- padding-bottom: 4vw;
+ padding-top: 35px;
   }
 
 
@@ -215,31 +213,33 @@ h2 {
   }
 
 
-.match_number {color: #7e7e7e;
+#id {color: #7e7e7e;
     font-weight: 600;
-    line-height: 12px;
-    font-size: 1vw;}
+    line-height: 18px;
+    font-size: 14px;}
 
 #raspisanie {font-family: 'Dusha_FIFA_World_Cup_2018';
-            font-size: 6vw;
+            font-size: 72px;
+            line-height: 76px;
             color: #333;
            font-style: normal;
           font-weight: 400;
           text-align: center;
-          padding-top: 3vw;}
+          padding-top: 10px;}
 
 .score {font-family: 'Dusha_FIFA_World_Cup_2018';
-       font-size: 4vw;
+       font-size: 30px;
        color: #333;}
 
 .match_2 {font-family: 'WhitneyBold';
           padding-top: 8px;
          color: #bdb289;
-        font-size: 3vw;}
+        font-size: 25px;}
 
 .match_3 {font-family: 'WhitneyBold';
+          padding-top: 8px;
          color: #333;
-        font-size: 3vw;}
+        font-size: 15px;}
 
 
 .r21 {font-family:  'BebasRegular'; font-size: 20px;}
@@ -247,7 +247,7 @@ h2 {
 table.r1 {
    font-family: 'WhitneyMedium';
   background-color: #f1ece3;
-  min-width: 60%;
+  min-width: 500px;
   min-height: 30%;
   text-align: center;
   border-collapse: collapse;
@@ -256,7 +256,7 @@ table.r1 {
 
 }
 
-table.r1 td {
+table.r1 td, table.redTable th {
    border: 0.5px solid #bdb289;
   padding: 2px 2px;
 }
@@ -300,15 +300,15 @@ table.r1 tfoot .links a{
   border-radius: 5px;
 }
 
-.sizeimg {height: 50%; width: 50%;
+.sizeimg {height: 20%; width: 20%;
 }
 
-.inlineblock { display: inline-block; margin: 2px;  vertical-align:bottom;}
+.inlineblock { display: inline-block; margin: 2px;}
 
 .moshniydiv {text-align: center; color: #333; }
 
 .prognoz {font-family: 'WhitneyMedium';
-          font-size: 3vw;
+          font-size: 16px;
           color: #333; 
 
         }
@@ -317,10 +317,10 @@ table.r1 tfoot .links a{
   text-decoration: none;
   user-select: none; 
   background:#0196d8; 
-  padding: 1vw 2vw; 
+  padding: .7em 0.3em; 
   outline: none; 
 font-family: 'WhitneyMedium';
-          font-size: 1vw;
+          font-size: 12px;
           color: #f1ece3;
           border: none;
           transition: all .3s;
@@ -328,9 +328,9 @@ font-family: 'WhitneyMedium';
 
 #baton:hover, #baton:active { background:#0a7eb2; transition: all .5s;}
 
-.inputcss {max-height: 4vw;
-  max-width: 3vw; 
- 
+.inputcss {height: 30px;
+  min-width: 15%; 
+  max-width: 30%; 
   background:white;
 color: #333; margin:4%;}
 
@@ -350,7 +350,7 @@ input::-webkit-inner-spin-button {
   text-decoration: none;
   user-select: none; 
   background:#0196d8; 
-  padding: 2% 5%; 
+  padding: .3em 1.5em; 
   outline: none; 
 font-family: 'BebasRegular';
           font-size: 16px;
@@ -370,7 +370,7 @@ margin-left: 10px;}
 #a:hover {color: #0a7eb2;  transition: all .3s; }
 
 #raspisanie2 {font-family: 'Dusha_FIFA_World_Cup_2018';
-            font-size: 6vw;
+            font-size: 72px;
             color: #f1ece3;
            font-style: normal;
           font-weight: 400;
@@ -385,10 +385,3 @@ font-size: 30px;
 .reglament {font-size: 18px;
             color: #f1ece3;
             text-align: center;}
-
-
-
-.position img {height: 40%;
-width: 40%;}
-
-.time {text-align: left; font-size: 6vw; padding-top: 1px;}
