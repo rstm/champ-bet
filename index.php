@@ -179,6 +179,19 @@ if(!isset($_COOKIE['user_id'])) {
 			 $sorted_matchname = array();
 			 $vs = ' ' . 'VS.' . ' ';
 
+			 function date2vk($timestamp){
+
+    $months=array(
+        'января','февраля','марта',
+        'апреля','мая','июня',
+        'июля','августа','сентября',
+        'октября','ноября','декабря'
+    );
+
+    $date=date_parse($timestamp);
+    return $date['day'].' '.$months[$date['month']-1].' '.$date['hour'].':'.$date['minute'];
+}
+
 
         if($result) 
         {
@@ -232,10 +245,11 @@ for ($i = 0 ; $i < ($rows) ; ++$i) {
         echo "<br>";
         echo "<img src=\"img/icons/$sorted_command_2[$i].png\">";
         echo "$sorted_command_2[$i]";
-        echo "<div class='time'>$sorted_array_of_datetime[$i]</div>";
+        echo "<div class='time'>";
+        echo date2vk($sorted_array_of_datetime[$i]);
+        echo "0";
         echo "</div>";
-
-        
+        echo "</div>";
         echo "<br>";
         echo "</div>";
         echo "</div>";
@@ -423,13 +437,14 @@ if (isset($_COOKIE['user_id']))
 			<?php
 		$user_id = $_COOKIE['user_id'];
 		$query ="SELECT * FROM `matches`";
+		$table = 'redTable';
 		 
 		$result = mysqli_query($dbc, $query) or die("Ошибка " . mysqli_error($dbc)); 
 		if($result)
 		{
 		    $rows = mysqli_num_rows($result); // количество полученных строк
 		     
-		    echo "<table class='redTable'>";
+		    echo "<table class='$table'>";
 		    for ($i = 0 ; $i < $rows ; ++$i)
 		    {
 		    	$match = mysqli_fetch_object($result);
@@ -449,7 +464,10 @@ if (isset($_COOKIE['user_id']))
 				$command1name = ucfirst(strtolower($match->command1));
 				$command2name = ucfirst(strtolower($match->command2));
 				
-		        echo "<td id='match$match->id' class='match_number'>#$match->id<br>$match->datetime</td>";
+		        echo "<td id='match$match->id' class='match_number'>#$match->id<br>";
+		        echo date2vk($match->datetime);
+		        echo "0";
+		        echo "</td>";
 		        echo "<td><div><img src=\"img/icons/$command1name.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
 		        </div></td>";
 		        echo "<td><div class='match_3'>VS.</div></td>";
@@ -480,6 +498,7 @@ if (isset($_COOKIE['user_id']))
 					 echo "<td><div class='moshniydiv'>Ваш прогноз:<br><div class='inlineblock'><img class='sizeimg inlineblock' src=\"img/icons/$command1name.png\"><div class='prognoz inlineblock'>$rate->rate1 - $rate->rate2</div><img class='sizeimg inlineblock' src=\"img/icons/$command2name.png\"></div></div></td>";
 					} 
 				 else 
+				 	
 				 	echo "<td><div class='moshniydiv'>Ваш прогноз:<br><img class='sizeimg inlineblock' src=\"img/icons/empty.png\"></div></td>";
 				 
 				 echo "</tr>";
