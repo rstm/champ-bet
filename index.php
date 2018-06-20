@@ -420,6 +420,7 @@ if($result)
 				</div>
      			<div class="col-md-8">
      				<div id="raspisanie">Расписание матчей</div>
+					<a href="#nearest_match">Перейти к ближайшему матчу</a>
 				</div>
 				<div class="col-md-2">
 				</div>
@@ -442,6 +443,7 @@ if (isset($_COOKIE['user_id']))
 		$result = mysqli_query($dbc, $query) or die("Ошибка " . mysqli_error($dbc)); 
 		if($result)
 		{
+			$nearest_match = false;
 		    $rows = mysqli_num_rows($result); // количество полученных строк
 		     
 		    echo "<table class='$table'>";
@@ -481,10 +483,17 @@ if (isset($_COOKIE['user_id']))
 		        // echo "<br>";
 
 		        if (strtotime('+3 hours', time()) < strtotime($match->datetime)) {
+
+					if ($nearest_match == false){
+						$nearest_match = true;
+						$nearest_match_class = 'nearest_match';
+					} else {
+						$nearest_match_class = '';
+					}
 		        ?>
 				
 				<td>
-		          	<form method="POST" action="create_rate.php">
+		          	<form id="<?=$nearest_match_class?>" method="POST" action="create_rate.php">
 						<input type="hidden" name="match_id" value="<?=$match->id?>">
 						<input class="rate-input inputcss" type="number" name="rate1" >-<input class="rate-input inputcss" type="number" name="rate2" ><br>
 					    <button id="baton" type="submit" name="submit">Сделать ставку</button>
