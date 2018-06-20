@@ -23,6 +23,13 @@ body input:required:valid,
 body textarea:required:valid {
 	
 }
+.container {
+  margin: 0 auto;
+  width: 100vw;
+}
+
+
+
 
 .error {font-family: "RobotoRegular", sans-serif;
 font-size: 16px;
@@ -300,8 +307,6 @@ table.r1 tfoot .links a{
   border-radius: 5px;
 }
 
-.sizeimg {height: 50%; width: 50%;
-}
 
 .inlineblock { display: inline-block; margin: 2px;  vertical-align:bottom;}
 
@@ -328,8 +333,9 @@ font-family: 'WhitneyMedium';
 
 #baton:hover, #baton:active { background:#0a7eb2; transition: all .5s;}
 
-.inputcss {max-height: 4vw;
-  max-width: 3vw; 
+.inputcss {height: 6vw;
+  width: 5vw; 
+  overflow: visible;
  
   background:white;
 color: #333; margin:4%;}
@@ -388,7 +394,15 @@ font-size: 30px;
 
 
 
-.position img {height: 40%;
-width: 40%;}
+.position .ss img {height: 50%;
+width: 50%;}
+
+.sizeimg {height: 20%; width:20%;
+}
+
 
 .time {text-align: left; font-size: 6vw; padding-top: 1px;}
+
+.container2 {
+width: 75vw;
+  margin: 0 auto;}

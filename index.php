@@ -164,8 +164,7 @@ if(!isset($_COOKIE['user_id'])) {
 			<div class="col-md-3">
 				<div class="content">Ближайшие матчи:</div>
 			</div>
-			
-
+			<div class="container2">
 
 
 
@@ -279,6 +278,7 @@ for ($i = 0 ; $i < ($rows) ; ++$i) {
 
 
 
+</div>
 
 
 
@@ -423,7 +423,7 @@ if($result)
 				</div>
 				<div class="col-md-2">
 				</div>
-			</div>
+			
 		
 
      	
@@ -468,10 +468,10 @@ if (isset($_COOKIE['user_id']))
 		        echo date2vk($match->datetime);
 		        echo "0";
 		        echo "</td>";
-		        echo "<td><div><img src=\"img/icons/$command1name.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
+		        echo "<td class='ss'><div><img src=\"img/icons/$command1name.png\"></br><div class='match_2'>$match->command1</div></div><br><div class='score'>$match->score1</div>
 		        </div></td>";
 		        echo "<td><div class='match_3'>VS.</div></td>";
-		        echo "<td><div><img src=\"img/icons/$command2name.png\"></br><div class='match_2'>$match->command2</div></div><br><div class='score'>$match->score2</div></td>";
+		        echo "<td class='ss'><div><img src=\"img/icons/$command2name.png\"></br><div class='match_2'>$match->command2</div></div><br><div class='score'>$match->score2</div></td>";
 
 		        
 
@@ -517,7 +517,7 @@ if (isset($_COOKIE['user_id']))
 		 
 		mysqli_close($dbc);
 		?>
-		</div></div>
+		</div></div></div>
 <?php } else { ?>
 	<div class="position"><h2>Для просмотра необходимо авторизоваться!</h2></div>
 <?php } ?>
