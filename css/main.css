@@ -458,3 +458,9 @@ table.redTable tfoot .links a{
   border-radius: 5px;
 }
 
+.position2{padding-top: 100px;}
+
+.position3{ margin:20px; padding-top: 80px;}
+
+.position3 a {background: #a40d14; padding: 5px 7px; color: #f1ece3; font-family: 'BebasRegular';}
+.position3 a:hover {background:#961e23; transition: all .5s;}

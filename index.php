@@ -420,7 +420,7 @@ if($result)
 				</div>
      			<div class="col-md-8">
      				<div id="raspisanie">Расписание матчей</div>
-					<a href="#nearest_match">Перейти к ближайшему матчу</a>
+					
 				</div>
 				<div class="col-md-2">
 				</div>
@@ -431,7 +431,7 @@ if($result)
 <?php
 
 if (isset($_COOKIE['user_id'])) 
-{
+{ 
 	?>
 		<div class="position">
 
@@ -441,6 +441,7 @@ if (isset($_COOKIE['user_id']))
 		$table = 'redTable';
 		 
 		$result = mysqli_query($dbc, $query) or die("Ошибка " . mysqli_error($dbc)); 
+		echo "<div class='position3'><a href='#nearest_match'>Перейти к ближайшему матчу</a></div>";
 		if($result)
 		{
 			$nearest_match = false;
@@ -528,7 +529,8 @@ if (isset($_COOKIE['user_id']))
 		?>
 		</div></div></div>
 <?php } else { ?>
-	<div class="position"><h2>Для просмотра необходимо авторизоваться!</h2></div>
+	<div class="position2">
+	<div class="position"><h2>Для просмотра необходимо авторизоваться!</h2></div></div>
 <?php } ?>
 			
 		

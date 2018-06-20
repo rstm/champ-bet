@@ -410,3 +410,7 @@ width: 50%;}
 .container2 {
 width: 70vw;
   margin: 0 auto;}
+
+.position3 a {background: #a40d14; padding: 3vw 4vw; color: #f1ece3; font-family: 'BebasRegular'; 
+font-size: 3vw}
+.position3 a:hover {background:#961e23; transition: all .5s;}
