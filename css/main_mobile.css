@@ -82,7 +82,7 @@ header a {color: #0196d8;}
 
 .top_line a:hover {border-bottom: #0196d8 1px solid;}
 
-.top {padding-left: 60px;
+.top {padding-left: 20vw;
              background-image: url(../img/icon3.png);
              background-repeat: no-repeat;
              background-position: top left;
@@ -93,7 +93,8 @@ header a {color: #0196d8;}
 	                color: #d12f22;
 	                text-transform: uppercase;
 	                font-weight: bold;
-	                font-size: 41px;
+	                font-size: 12vw;
+                  line-height: 11vw;
 	                }
 
 .top_line .logo {border-bottom: none;
