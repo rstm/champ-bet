@@ -11,6 +11,13 @@
 <body>
 
 
+<form method="POST" action="create_match.php" border=1>
+    Команда 1: <input type="text" name="command1" ><br>
+    Команда 2: <input type="text" name="command2" ><br>
+    Время матча: <input type="date" name="match_time" ><br>
+    <button type="submit" name="submit">Создать матч</button>
+</form>
+
 <?php
 
 $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
